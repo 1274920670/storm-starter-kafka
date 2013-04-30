@@ -1,8 +1,8 @@
 package storm.kafka;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
 import kafka.javaapi.consumer.SimpleConsumer;
 import storm.kafka.KafkaConfig.StaticHosts;
 

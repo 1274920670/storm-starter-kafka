@@ -7,10 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import backtype.storm.task.IMetricsContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import storm.kafka.KafkaConfig.ZkHosts;
+import backtype.storm.task.IMetricsContext;
 
 public class ZkCoordinator implements PartitionCoordinator {
     public static Logger LOG = LoggerFactory.getLogger(ZkCoordinator.class);

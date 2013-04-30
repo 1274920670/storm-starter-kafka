@@ -1,23 +1,29 @@
 package storm.kafka.trident;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import kafka.javaapi.consumer.SimpleConsumer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import storm.kafka.DynamicPartitionConnections;
+import storm.kafka.GlobalPartitionId;
+import storm.trident.operation.TridentCollector;
+import storm.trident.spout.IOpaquePartitionedTridentSpout;
+import storm.trident.topology.TransactionAttempt;
 import backtype.storm.Config;
 import backtype.storm.metric.api.CombinedMetric;
 import backtype.storm.metric.api.MeanReducer;
 import backtype.storm.metric.api.ReducedMetric;
 import backtype.storm.task.TopologyContext;
 import backtype.storm.tuple.Fields;
+
 import com.google.common.collect.ImmutableMap;
-
-import java.util.*;
-
-import kafka.javaapi.consumer.SimpleConsumer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import storm.kafka.DynamicPartitionConnections;
-import storm.kafka.GlobalPartitionId;
-import storm.trident.operation.TridentCollector;
-import storm.trident.spout.IOpaquePartitionedTridentSpout;
-import storm.trident.topology.TransactionAttempt;
 
 
 public class OpaqueTridentKafkaSpout implements IOpaquePartitionedTridentSpout<Map<String, List>, GlobalPartitionId, Map> {

@@ -1,16 +1,18 @@
 package storm.kafka;
 
-import backtype.storm.Config;
-import backtype.storm.utils.Utils;
-import com.netflix.curator.framework.CuratorFramework;
-import com.netflix.curator.framework.CuratorFrameworkFactory;
-import com.netflix.curator.retry.RetryNTimes;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import backtype.storm.Config;
+import backtype.storm.utils.Utils;
+
+import com.netflix.curator.framework.CuratorFramework;
+import com.netflix.curator.framework.CuratorFrameworkFactory;
+import com.netflix.curator.retry.RetryNTimes;
 
 public class DynamicBrokersReader {
     
