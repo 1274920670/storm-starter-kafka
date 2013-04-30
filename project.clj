@@ -4,17 +4,22 @@
   :resource-paths ["multilang"]
   :aot :all
   :repositories {
-;;                 "twitter4j" "http://twitter4j.org/maven2"
+                 "scala-tools" "http://scala-tools.org/repo-releases"
+                  "conjars" "http://conjars.org/repo/"
                  }
 
   :dependencies [
 ;;                 [org.twitter4j/twitter4j-core "2.2.6-SNAPSHOT"]
 ;;                 [org.twitter4j/twitter4j-stream "2.2.6-SNAPSHOT"]
                    [commons-collections/commons-collections "3.2.1"]
+                   [org.scala-lang/scala-library "2.9.2"]
+                   [com.twitter/kafka_2.9.2 "0.7.0"
+                    :exclusions [org.apache.zookeeper/zookeeper
+                               log4j/log4j]]
                  ]
 
   :profiles {:dev
-              {:dependencies [[storm "0.8.2"]
+              {:dependencies [[storm "0.9.0-wip15"]
                               [org.clojure/clojure "1.4.0"]]}}
   :min-lein-version "2.0.0"
   )
